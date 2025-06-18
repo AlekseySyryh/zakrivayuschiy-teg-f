@@ -11,6 +11,128 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  font-family: var(--font_main);
+  font-variation-settings: "wght" var(--normal_font_weight);
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin: 100px 0px;
+  gap: 100px;
+}
+
+.content {
+  inline-size: var(--connent-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  font-family: var(--font_accent);
+  font-weight: var(--normal_font_weight);
+  text-transform: uppercase;
+  padding: clamp(120px, 18.3%, 128px) 0px;
+  gap: 20px;
+}
+
+.header-title {
+  font-size: clamp(49px, calc(var(--connent-width) * 0.05 + 30.25px), 65px);
+}
+
+.header-desc {
+  font-size: clamp(14px, calc(var(--connent-width) * 0.03 + 2.75px), 23px);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.post {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.post-header {
+  font-size: inherit;
+  font-variation-settings: "wght" var(--header_font_weight);
+  margin: 4px 10px 6px;
+}
+
+.post-image-container {
+  position: relative;
+}
+
+.post-image {
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: 97% center;
+  aspect-ratio: 1/1;
+}
+
+.watermark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font_accent);
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 1px 1px 0px white;
+}
+
+@supports (-webkit-text-stroke: 1px white) {
+  .watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+  }
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding-top: 2px;
+  margin: 25px;
+  line-height: 117%;
+}
+
+.post-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  margin: 25px;
+}
+
+.card__icon-button {
+  padding: 0px;
+  border: 0px;
+  height: 22px;
+  width: 27px;
+  background-color: transparent;
+}
+
+.card__like-button {
+  height: 38px;
+  width: 130px;
+  border: 2px solid black;
+  background-color: transparent;
+}
+
+.button__text {
+  font-family: var(--font_accent);
+  font-size: 14px;
+  line-height: 90%;
 }
