@@ -165,27 +165,66 @@
 .card__icon-button {
   padding: 0px;
   border: 0px;
-  height: 22px;
-  width: 27px;
+  height: 38px;
+  width: 38px;
   background-color: transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid black;
+  transition: outline 0.3s ease;
+}
+
+
+.button {
+  position: relative;
+  padding: 0px;
+  color: white;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid black;
+  box-shadow: 2px 2px black;
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  top: 0px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
 }
 
 .card__like-button {
-  height: 38px;
+  height: 39px;
   width: 130px;
   border: 2px solid black;
   background-color: transparent;
-}
-
-.heart {
-  width: 27px;
-  height: 24px;
 }
 
 .button__text {
   font-family: var(--font_accent);
   font-size: 14px;
   line-height: 90%;
+  mix-blend-mode: difference;
 }
 
 .save-button {
@@ -205,6 +244,9 @@
 .floppy {
   inline-size: 21px;
   aspect-ratio: 1/1;
+  filter: invert(1);
+  background-color: white;
+  mix-blend-mode: difference;
 }
 
 .dialog {
@@ -250,6 +292,10 @@ dialog::backdrop {
   background-color: transparent;
   border: 2px solid black;
   height: 38px;
+}
+
+.sparks {
+  opacity: 0;
 }
 
 @media (width < 400px) {
