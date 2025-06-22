@@ -287,7 +287,6 @@
 }
 
 .save-button {
-  background-color: transparent;
   border: 2px solid black;
   display: flex;
   flex-direction: row;
